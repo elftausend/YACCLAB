@@ -11,7 +11,7 @@
 #include "labeling_algorithms.h"
 #include "register.h"
 
-// Rasmusson2013
+// RASMUSSON22013
 
 #define BLOCK_SIZE 32   // this must be multiple of the warp size (leave it to 32)
 #define PATCH_SIZE (BLOCK_SIZE + 2)
@@ -482,14 +482,14 @@ __global__ void End(cuda::PtrStepSzi labels) {
 
 }
 
-class RASMUSSON : public GpuLabeling2D<Connectivity2D::CONN_8> {
+class RASMUSSON2 : public GpuLabeling2D<Connectivity2D::CONN_8> {
 private:
     dim3 grid_size_;
     dim3 block_size_;
     char* d_changed_ptr_;
 
 public:
-    RASMUSSON() {}
+    RASMUSSON2() {}
 
     void PerformLabeling() {
 
@@ -588,4 +588,5 @@ public:
 
 };
 
-REGISTER_LABELING(RASMUSSON);
+REGISTER_LABELING(RASMUSSON2);
+

@@ -111,8 +111,8 @@ GPU 2D 8-way connectivity:
   # -------------------------------------------------
   
   perform: 
-    correctness:        true
-    average:            false
+    correctness:        false
+    average:            true
     average_with_steps: false
     density:            false
     granularity:        false
@@ -121,12 +121,12 @@ GPU 2D 8-way connectivity:
   
   correctness_tests: 
     eight_connectivity_standard:    true
-    eight_connectivity_steps:       true
+    eight_connectivity_steps:       false
     eight_connectivity_memory:      false
     eight_connectivity_blocksize:   false
    
   tests_number: 
-    average:             10
+    average:             1
     average_with_steps:  10
     density:             10
     granularity:         10
@@ -136,16 +136,19 @@ GPU 2D 8-way connectivity:
   # -------------------------------------
   
   algorithms:
-  #  - BUF
-  #  - BKE
-  #  - BE
-  #  - UF
-  #  - OLE
-  #  - LBUF
-  #  - KE
-  #  - DLP
-    - BRB
-
+    # - BUF
+    # - BKE
+    # - BE
+    # - UF
+    # - OLE
+    # - LBUF
+    # - KE
+    # - DLP
+    # - BRB
+    - RASMUSSON
+    # - RASMUSSON2
+    - FARGATHER
+    # - COLORED
   
   # Datasets to use for each test
   # -----------------------------
@@ -155,11 +158,12 @@ GPU 2D 8-way connectivity:
   check_datasets: ["fingerprints", "hamlet"]
   
   # List of datasets on which "Average Runtime Tests" shall be run
-  average_datasets: ["3dpes", "fingerprints", "hamlet", "medical", "mirflickr", "tobacco800", "xdocs"]
-  
+  #average_datasets: ["3dpes", "fingerprints", "hamlet", "medical", "mirflickr", "tobacco800", "xdocs"]
+  average_datasets: ["tobacco800"]
+
   # List of datasets on which "Average Runtime Tests With Steps" shall be run
-  average_datasets_with_steps: ["3dpes", "fingerprints", "hamlet", "medical", "mirflickr", "tobacco800", "xdocs"]
-   
+  #average_datasets_with_steps: ["3dpes", "fingerprints", "hamlet", "medical", "mirflickr", "tobacco800", "xdocs"]
+  average_datasets_with_steps: ["fingerprints"]
   # List of datasets on which "Memory Tests" shall be run
   memory_datasets: ["3dpes", "fingerprints", "hamlet", "medical", "mirflickr", "tobacco800", "xdocs"]
   
@@ -180,7 +184,7 @@ GPU 2D 8-way connectivity:
 # -------------------- #
 
 # Directory for input/output paths
-paths: {input: "F:/lavoro/dataset/YACCLAB", output: "F:/lavoro/progetti/survey_ccl_gpu/YACCLAB/MSVC2019_CUDA_x64/output"}
+paths: {input: "/home/elftausend/Desktop/rust/YACCLAB/input", output: "./test-output"}
 
 # Save the returned number of components in output files
 write_n_labels: false

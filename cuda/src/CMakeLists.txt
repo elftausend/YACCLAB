@@ -8,6 +8,9 @@ target_sources(YACCLAB  PRIVATE
     labeling_chen_2011_2048.cu
     labeling_stava_2011.cu
     labeling_rasmusson_2013.cu
+    labeling_rasmusson2_2013.cu
+    labeling_colored.cu
+    labeling_fargather.cu
     labeling_paravecino_2014.cu
     labeling_soh_2014_8DLS.cu
     labeling_soh_2014_M8DLS.cu

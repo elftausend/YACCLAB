@@ -145,7 +145,7 @@ __global__ void mergeSpansKernel(int* components, int* spans, const int rows, co
 
                     relabelUnrollKernel << <numBlocksUnrollRelabel, threadsPerBlockUnrollRelabel >> > (components, components[newI * (colsSpans / 2) + (k / 2)], label, colsComponents, idx, rows, factor);
 
-                    cudaDeviceSynchronize();
+                    // cudaDeviceSynchronize();
                     //cudaError_t err = cudaGetLastError();
                     //if (err != cudaSuccess)
                     //    printf("\tError:%s \n", (char)err);
